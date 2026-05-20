@@ -32,16 +32,20 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-results
+          path: target/surefire-reports/testng-results.xml
 
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: calculator-web-app
+          path: target/calculator-web-app.jar
 
       - name: download artifact
         uses: actions/download-artifact@v4
         with:
           name: calculator-web-app
+          path: target/calculator-web-app.jar
+
   build-and-push:
     runs-on: ubuntu-latest
     needs: test
