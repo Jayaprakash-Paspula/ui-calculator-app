@@ -26,7 +26,7 @@ jobs:
       - name: Upload application artifact
         uses: actions/upload-artifact@v4
         with:
-          name: calculator-web-app
+          name: calculator-web-app-1
           path: target/*.jar
 
   test:
@@ -45,7 +45,7 @@ jobs:
       - name: Download application artifact
         uses: actions/download-artifact@v4
         with:
-          name: calculator-web-app
+          name: calculator-web-app-1
           path: target/
 
       - name: Verify downloaded files
