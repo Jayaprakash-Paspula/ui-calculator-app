@@ -41,6 +41,7 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+          cache: maven
 
       - name: Download application artifact
         uses: actions/download-artifact@v4
@@ -59,6 +60,11 @@ jobs:
         with:
           name: test-results
           path: target/surefire-reports/testng-results.xml
+      - name: download test artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: target/
 
   build-and-push:
     runs-on: ubuntu-latest
