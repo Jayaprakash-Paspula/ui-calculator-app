@@ -4,7 +4,7 @@ FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # Copy the JAR from builder stage
-COPY target/*.jar app.jar
+COPY *.jar app.jar
 
 # Create logs directory
 RUN mkdir -p /app/logs
