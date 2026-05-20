@@ -1,19 +1,4 @@
-# Multi-stage Dockerfile for Calculator Web Application
-# Stage 1: Build the application
-FROM maven:3.9-eclipse-temurin-17 as builder
-
-WORKDIR /app
-
-# Copy pom.xml
-COPY pom.xml .
-
-# Copy source code
-COPY src src
-
-# Build the application
-RUN mvn clean package -DskipTests
-
-# Stage 2: Run the application
+# Stage 1: Run the application
 FROM eclipse-temurin:17-jre
 
 WORKDIR /app
