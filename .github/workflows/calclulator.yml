@@ -70,14 +70,14 @@ jobs:
       - name: Download application artifact
         uses: actions/download-artifact@v4
         with:
-          name: calculator-web-app
+          name: calculator-web-app-1
           path: target/
 
       - name: Verify downloaded files
         run: ls -lh target/
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/calculator-web-app:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/calculator-web-app-1:latest .
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
@@ -86,7 +86,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push Docker image to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/calculator-web-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/calculator-web-app-1:latest
 
   trivy-image-scan:
     runs-on: ubuntu-latest
@@ -95,7 +95,7 @@ jobs:
       - name: Run Trivy image scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/calculator-web-app:latest
+          image-ref: ${{ secrets.DOCKER_USERNAME }}/calculator-web-app-1:latest
           format: table
           exit-code: '1'
           ignore-unfixed: true
@@ -104,7 +104,7 @@ jobs:
       - name: Generate Trivy report (SARIF)
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/calculator-web-app:latest
+          image-ref: ${{ secrets.DOCKER_USERNAME }}/calculator-web-app-1:latest
           format: sarif
           output: trivy-results.sarif
           ignore-unfixed: true
