@@ -1,0 +1,40 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+out/
+.iml
+
+# NetBeans
+nbproject/
+.nb-gradle/
+
+# Gradle (if used)
+.gradle/
+build/
+
+# Misc
+*.log
+logs/
+.tmp/
+*.class
+

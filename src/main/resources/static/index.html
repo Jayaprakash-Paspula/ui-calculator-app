@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Web Application</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculator App</h1>
+            <p class="subtitle">Simple Calculator Web Application</p>
+        </header>
+
+        <main>
+            <div class="calculator-wrapper">
+                <div class="calculator">
+                    <div class="display-container">
+                        <input type="text" id="display" class="display" placeholder="0" readonly>
+                        <div class="operation-info" id="operationInfo"></div>
+                    </div>
+
+                    <div class="buttons-grid">
+                        <!-- Row 1 -->
+                        <button class="btn btn-function" onclick="clearDisplay()">C</button>
+                        <button class="btn btn-function" onclick="deleteLast()">DEL</button>
+                        <button class="btn btn-function" onclick="toggleSign()">+/-</button>
+                        <button class="btn btn-operator" onclick="setOperator('/')">÷</button>
+
+                        <!-- Row 2 -->
+                        <button class="btn btn-number" onclick="appendNumber('7')">7</button>
+                        <button class="btn btn-number" onclick="appendNumber('8')">8</button>
+                        <button class="btn btn-number" onclick="appendNumber('9')">9</button>
+                        <button class="btn btn-operator" onclick="setOperator('*')">×</button>
+
+                        <!-- Row 3 -->
+                        <button class="btn btn-number" onclick="appendNumber('4')">4</button>
+                        <button class="btn btn-number" onclick="appendNumber('5')">5</button>
+                        <button class="btn btn-number" onclick="appendNumber('6')">6</button>
+                        <button class="btn btn-operator" onclick="setOperator('-')">-</button>
+
+                        <!-- Row 4 -->
+                        <button class="btn btn-number" onclick="appendNumber('1')">1</button>
+                        <button class="btn btn-number" onclick="appendNumber('2')">2</button>
+                        <button class="btn btn-number" onclick="appendNumber('3')">3</button>
+                        <button class="btn btn-operator" onclick="setOperator('+')">+</button>
+
+                        <!-- Row 5 -->
+                        <button class="btn btn-number btn-zero" onclick="appendNumber('0')">0</button>
+                        <button class="btn btn-number" onclick="appendDecimal('.')">.</button>
+                        <button class="btn btn-equals" onclick="calculate()">=</button>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="history-panel">
+                    <div class="history-header">
+                        <h3>History</h3>
+                        <button class="btn-clear-history" onclick="clearHistory()">Clear</button>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <p class="empty-message">No calculations yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status and Info Section -->
+            <div class="info-section">
+                <div class="status" id="status"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Calculator Web Application | Built with Spring Boot & JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>
+

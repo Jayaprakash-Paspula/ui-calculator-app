@@ -1,0 +1,29 @@
+# Git files
+.git
+.gitignore
+.github
+
+# IDE files
+.idea
+.vscode
+*.iml
+*.swp
+*.swo
+
+# Build files
+target
+*.class
+*.jar
+*.war
+
+# Documentation
+*.md
+docs
+
+# Misc
+.DS_Store
+.env
+.log
+logs
+node_modules
+
